@@ -13,7 +13,7 @@ git commit -m "${1}"
 #git commit -m "email"
 #git commit -m "first commit"
 git remote add origin https://github.com/bonaventureli/tool-sh.git
-git push -u origin master
+git push -u origin master -f
 
 #…or push an existing repository from the command line
 
