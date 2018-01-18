@@ -1,0 +1,6 @@
+#!/bin/sh
+source /etc/profile
+echo "li-----no-this is andy ">>/tmp/test.txt
+echo "li------no-this ---- is hello.sh">>/tmp/test.txt
+#./LightCrafter4500
+source /root/.bashrc

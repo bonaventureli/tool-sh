@@ -1,0 +1,6 @@
+#!/bin/bash
+source /etc/profile
+echo "fei-----no-this is andy ">>/tmp/test.txt
+echo "fei------no-this ---- is hello.sh">>/tmp/test.txt
+#./LightCrafter4500
+source /root/.bashrc

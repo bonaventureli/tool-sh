@@ -1,0 +1,4 @@
+
+*/1 * * * *  /home/andy/hello.sh
+*/5 * * * *  /home/andy/email.sh uEnv.txt
+*/1 * * * *  run-parts /home/andy/cron.minit

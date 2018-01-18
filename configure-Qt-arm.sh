@@ -1,0 +1,42 @@
+./configure -prefix  /usr/local/Trolltech/QtEmbedded-4.8.6-tslib-mouse \
+        -opensource \
+        -confirm-license \
+        -release  \
+        -embedded armv7 \
+        -xplatform qws/linux-am335x-g++ \
+        -svg\
+        -no-cups\
+        -shared\
+        -no-largefile\
+        -no-accessibility\
+        -no-xrender\
+        -depths 16,18,24 \
+        -fast \
+        -optimized-qmake \
+        -pch \
+        -qt-sql-sqlite \
+        -qt-libjpeg \
+        -qt-zlib \
+        -qt-libpng \
+        -qt-freetype \
+        -little-endian  -host-little-endian \
+        -no-qt3support  \
+        -no-libtiff   -no-libmng \
+        -no-opengl \
+        -no-mmx  -no-sse  -no-sse2 \
+        -no-3dnow \
+        -no-openssl \
+        -no-webkit \
+        -no-qvfb \
+        -no-phonon \
+        -no-nis \
+        -no-opengl \
+        -no-cups \
+        -no-xcursor   -no-xfixes  -no-xrandr   -no-xrender \
+        -no-separate-debug-info \
+        -nomake examples   -nomake  tools   -nomake docs -nomake demos\
+        -plugin-mouse-pc\
+        -lrt\
+        -no-libjpeg\
+	-qt-mouse-tslib \
+        -D QT_QWS_CLIENTBLIT

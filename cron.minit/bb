@@ -1,0 +1,7 @@
+#!/bin/sh
+#source /etc/profile
+echo "b----no-this is andy ">>/tmp/test.txt
+echo "bb------no-this ---- is hello.sh">>/tmp/test.txt
+#./LightCrafter4500
+firefox
+#source /root/.bashrc
