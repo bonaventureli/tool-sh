@@ -9,7 +9,8 @@ git init
 git add -A
 #git add README.md
 #git commit -m "vbird"
-git commit -m "email"
+git commit -m "${1}"
+#git commit -m "email"
 #git commit -m "first commit"
 git remote add origin https://github.com/bonaventureli/tool-sh.git
 git push -u origin master
