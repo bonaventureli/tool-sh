@@ -18,5 +18,11 @@ git push -u origin master -f
 #git push -f origin dev
 #git branch -d dev
 #git push origin --delete dev
+#git clone -b dev https://github.com/bonaventureli/tool-sh.git
+
+#git tag -a 1.0 -m "dev"
+#git push origin --tags
+#git tag
+#git fetch origin tag <tagname>
 
 
