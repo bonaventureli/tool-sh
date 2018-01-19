@@ -7,15 +7,16 @@
 
 git init
 git add -A
-#git add README.md
 #git commit -m "vbird"
 git commit -m "${1}"
-#git commit -m "email"
-#git commit -m "first commit"
 git remote add origin https://github.com/bonaventureli/tool-sh.git
 git push -u origin master -f
 
-#…or push an existing repository from the command line
+#git checkout -b dev
+#git add -A
+#git commit -m "dev"
+#git push -f origin dev
+#git branch -d dev
+#git push origin --delete dev
 
-#git remote add origin https://github.com/bonaventureli/tool-learn-sh.git
-#git push -u origin master
+
