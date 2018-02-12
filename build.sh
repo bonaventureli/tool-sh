@@ -1,0 +1,45 @@
+./configure -verbose -prefix  /usr/local/Trolltech/QtEmbedded-4.8.6-arm \
+        -opensource \
+        -confirm-license \
+        -release  \
+        -embedded armv7 \
+        -xplatform qws/linux-am335x-g++ \
+        -no-svg\
+        -no-cups\
+        -shared\
+        -no-largefile\
+        -no-accessibility\
+        -no-xrender\
+        -depths 16,18,24 \
+        -fast \
+        -optimized-qmake \
+        -pch \
+        -qt-sql-sqlite \
+        -qt-libjpeg \
+        -qt-zlib \
+        -qt-libpng \
+        -qt-freetype \
+        -little-endian  -host-little-endian \
+        -no-qt3support  \
+        -no-libtiff   -no-libmng \
+        -no-mmx  -no-sse  -no-sse2 \
+        -no-3dnow \
+        -no-openssl \
+        -no-webkit \
+        -no-qvfb \
+        -no-phonon \
+        -no-nis \
+        -no-cups \
+        -no-xcursor   -no-xfixes  -no-xrandr   -no-xrender \
+        -no-separate-debug-info \
+        -nomake examples   -nomake  tools   -nomake docs -nomake demos\
+        -plugin-mouse-pc\
+        -no-libjpeg\
+        -stl\
+        -qt3support\
+        -svg\
+        -gtkstyle\
+        -qt-gfx-transformed\
+        -plugin-gfx-powervr\
+        -D QT_NO_QWS_CURSOR\
+        -D QT_QWS_CLIENTBLIT

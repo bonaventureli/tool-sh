@@ -1,7 +1,9 @@
 #!/bin/bash
-fdisk /dev/sdd
+ls /dev/sd*
+read -p "please input your sd (sdb)" SD
+fdisk /dev/$SD
 
-p
+#p
 ###delect part 1 2 3 ...
 ##d
 ##1
@@ -46,9 +48,9 @@ p
 ##
 ##w
 ##
-mkfs.vfat -F 32 -n boot /dev/sdd1
-mkfs.ext3 -L rootfs /dev/sdd2
+mkfs.vfat -F 32 -n boot /dev/"$SD"1
+mkfs.ext3 -L rootfs /dev/"$SD"2
 
-sudo fdisk -l
-sudo parted -l
-df -h
+sudo fdisk -l /dev/$SD
+sudo parted -l /dev/$SD
+df -h /dev/$SD
