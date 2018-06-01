@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/samba-ubuntu/bonaventureli-ssh/C++/IIC/HardwareFactory.h
+memory
+-
+IFrameBuffer.h
+/samba-ubuntu/bonaventureli-ssh/C++/IIC/IFrameBuffer.h
+
+/samba-ubuntu/bonaventureli-ssh/C++/IIC/IFrameBuffer.h
+stdint.h
+-
+
+/samba-ubuntu/bonaventureli-ssh/C++/IIC/main.cpp
+HardwareFactory.h
+/samba-ubuntu/bonaventureli-ssh/C++/IIC/HardwareFactory.h
+

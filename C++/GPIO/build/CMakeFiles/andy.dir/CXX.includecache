@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../mock_hardware/Shared.h
+
+/samba-ubuntu/bonaventureli-ssh/C++/GPIO/ErrorMessage.h
+iostream
+-
+stdio.h
+-
+syslog.h
+-
+sstream
+-
+cstring
+-
+vector
+-
+
+/samba-ubuntu/bonaventureli-ssh/C++/GPIO/Filenames.h
+Shared.h
+-
+
+/samba-ubuntu/bonaventureli-ssh/C++/GPIO/GPIO.cpp
+GPIO.h
+/samba-ubuntu/bonaventureli-ssh/C++/GPIO/GPIO.h
+fstream
+-
+iostream
+-
+stdexcept
+-
+Filenames.h
+/samba-ubuntu/bonaventureli-ssh/C++/GPIO/Filenames.h
+ErrorMessage.h
+/samba-ubuntu/bonaventureli-ssh/C++/GPIO/ErrorMessage.h
+
+/samba-ubuntu/bonaventureli-ssh/C++/GPIO/GPIO.h
+

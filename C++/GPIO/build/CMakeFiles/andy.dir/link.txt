@@ -1,0 +1,2 @@
+/usr/bin/ar qc libandy.a  CMakeFiles/andy.dir/GPIO.cpp.o
+/usr/bin/ranlib libandy.a

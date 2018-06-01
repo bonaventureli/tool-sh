@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/samba-ubuntu/bonaventureli-ssh/C++/GPIO/GPIO.h
+
+/samba-ubuntu/bonaventureli-ssh/C++/GPIO/Hardware.h
+
+/samba-ubuntu/bonaventureli-ssh/C++/GPIO/main.cpp
+GPIO.h
+/samba-ubuntu/bonaventureli-ssh/C++/GPIO/GPIO.h
+Hardware.h
+/samba-ubuntu/bonaventureli-ssh/C++/GPIO/Hardware.h
+iostream
+-
+

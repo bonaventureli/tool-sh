@@ -1,0 +1,4 @@
+/samba-ubuntu/bonaventureli-ssh/C++/GPIO/build/CMakeFiles/rebuild_cache.dir
+/samba-ubuntu/bonaventureli-ssh/C++/GPIO/build/CMakeFiles/edit_cache.dir
+/samba-ubuntu/bonaventureli-ssh/C++/GPIO/build/CMakeFiles/main.dir
+/samba-ubuntu/bonaventureli-ssh/C++/GPIO/build/CMakeFiles/andy.dir

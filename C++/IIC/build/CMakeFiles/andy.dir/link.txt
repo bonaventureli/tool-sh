@@ -1,0 +1,2 @@
+/usr/bin/ar qc libandy.a  CMakeFiles/andy.dir/I2C_Device.cpp.o CMakeFiles/andy.dir/I2C_Resource.cpp.o CMakeFiles/andy.dir/HardwareFactory.cpp.o CMakeFiles/andy.dir/GPIO_Interrupt.cpp.o
+/usr/bin/ranlib libandy.a
