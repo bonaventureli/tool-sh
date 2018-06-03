@@ -15,6 +15,10 @@ git commit -m "${1}"
 git remote add origin https://github.com/bonaventureli/tool-sh.git
 git push -u origin master -f
 
+#git rm empty
+#git commit -m "delete file"
+#git push origin master
+
 #git checkout -b dev
 #git add -A
 #git commit -m "dev"
