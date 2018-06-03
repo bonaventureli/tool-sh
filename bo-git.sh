@@ -1,6 +1,9 @@
 #!/bin/bash
 #…or create a new repository on the command line
 
+#ssh-keygen -t rsa -C "xxx@xxx.cn"
+#ssh -T git@github.com
+
 #echo "# tool-sh" >> README.md
 #git config --global user.email "xxx@xxx.cn"
 #git config --global user.name "bonaventureli"
