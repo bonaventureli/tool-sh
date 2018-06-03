@@ -19,6 +19,28 @@ git push -u origin master -f
 #git commit -m "delete file"
 #git push origin master
 
+#git branch -a
+#git branch tool-sh1.0
+#git branch tool-sh1.1
+#git branch tool-sh1.2
+
+#git checkout tool-sh1.0
+#git push origin tool-sh1.0
+
+#git checkout tool-sh1.1
+#git push origin tool-sh1.1
+
+#git checkout tool-sh1.2
+#git push origin tool-sh1.2
+
+#git branch --delete tool-sh1.0
+#git branch --delete tool-sh1.1
+#git branch --delete tool-sh1.2
+#git push origin --delete tool-sh1.0
+#git push origin --delete tool-sh1.1
+#git push origin --delete tool-sh1.2
+
+
 #git checkout -b dev
 #git add -A
 #git commit -m "dev"
