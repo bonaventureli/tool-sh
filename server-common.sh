@@ -4,11 +4,13 @@ then
 	    i=0;
 	    while [ $i -lt 10 ]
 	    do
-	        var=`date +%Y-%m-%d-%H:%M:%S`
-	        LOGFILE=${1}-$var.log
+	        starttime=`date +%Y-%m-%d-%H:%M:%S`
+	        LOGFILE=${1}-$starttime.log
 	        SHELLFILE=${1}
-	        LOGFILE=$SHELLFILE-$var.log
-	        /bin/bash -e $PWD/$SHELLFILE 2>&1 | tee $LOGFILE
+	        LOGFILE=$SHELLFILE-$starttime.log
+	        (time /bin/bash -e $PWD/$SHELLFILE) 2>&1 | tee $LOGFILE
+	        endtime=`date +%Y-%m-%d-%H:%M:%S`
+		#echo $endtime 2>&1 | tee $LOGFILE
 	        email.sh $LOGFILE 
 	        rm *.log
 	        rm -rf tmp
