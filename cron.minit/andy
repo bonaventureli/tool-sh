@@ -1,5 +1,0 @@
-#!/bin/sh
-source /etc/profile
-echo "no-this is andy ">>/tmp/test.txt
-echo "no-this ---- is hello.sh">>/tmp/test.txt
-sh LightCrafter4500

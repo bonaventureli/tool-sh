@@ -1,6 +1,0 @@
-#!/bin/sh
-source /etc/profile
-echo "this is andy ">>/tmp/test.txt
-echo "this ---- is hello.sh">>/tmp/test.txt
-/home/andy/Downloads/GUI/LightCrafter4500
-/home/andy/bonaventureli-ssh/what_to_eat.sh

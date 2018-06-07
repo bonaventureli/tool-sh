@@ -1,0 +1,7 @@
+# /etc/cron.d/anacron: crontab entries for the anacron package
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+#* *    * * *   root	/home/andy/tool-sh/crontab-test.sh
+* *    * * *   root	/home/andy/tool-sh/crontab-bbb.sh
