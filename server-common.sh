@@ -7,7 +7,7 @@ then
 	    cp ${1} ../tmp-server
 	    cp email1.1.sh ../tmp-server
 	    cp name ../tmp-server
-	    cp pass ../tmp-server
+	    cp pass-a ../tmp-server
 	    cd ../tmp-server
 	    i=0;
 	    while [ $i -lt 10 ]
