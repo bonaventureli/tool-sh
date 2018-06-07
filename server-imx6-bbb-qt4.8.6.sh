@@ -6,7 +6,8 @@ wget -c https://releases.linaro.org/components/toolchain/binaries/4.9-2017.01/ar
 ARM_LINUX_GNU=gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf
 #ARM_LINUX_GNU=gcc-linaro-arm-linux-gnueabihf-4.8-2014.04_linux
 if [ ! -d $PWD/$ARM_LINUX_GNU ]; then
-tar -zv $ARM_LINUX_GNU.tar.xz
+xz -dv $ARM_LINUX_GNU.tar.xz
+tar xvf $ARM_LINUX_GNU.tar
 fi
 export PATH=$PWD/$ARM_LINUX_GNU/bin:$PATH
 export TOOLCHAIN=$PWD/$ARM_LINUX_GNU
