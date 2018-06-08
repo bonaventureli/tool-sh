@@ -1,4 +1,0 @@
-
-*/1 * * * *  /home/andy/hello.sh
-* * * * *  /bin/bash /home/andy/tool-sh/email1.1.sh baidu.sh
-*/1 * * * *  run-parts /home/andy/tool-sh/cron.minit

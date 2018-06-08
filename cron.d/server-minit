@@ -1,0 +1,13 @@
+# /etc/cron.d/anacron: crontab entries for the anacron package
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+#* *    * * *   root	/home/andy/tool-sh/crontab-test.sh
+#* *    * * *   andy	cd /home/andy/tool-sh && git pull origin master
+#* *    * * *   andy	/home/andy/tool-sh/crontab-bbb.sh
+* *    * * *   root	run-parts --report /home/andy/tool-sh/cron.minit
+* *    * * *   andy	run-parts --report /home/andy/tool-sh/cron.hourly
+* *    * * *   andy	run-parts --report /home/andy/tool-sh/cron.daily
+* *    * * *   andy	run-parts --report /home/andy/tool-sh/cron.weekly
+* *    * * *   andy	run-parts --report /home/andy/tool-sh/cron.monthly
