@@ -1,2 +1,3 @@
 #!/bin/bash
-echo "yes" >> /home/andy/tool-sh/abc.txt
+echo "yes you are in $PWD" >> /home/andy/tool-sh/cron.minit/abc.txt
+

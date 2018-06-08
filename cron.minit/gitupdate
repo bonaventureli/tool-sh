@@ -1,0 +1,3 @@
+#!/bin/bash
+cd /home/andy/tool-sh
+git push origin master

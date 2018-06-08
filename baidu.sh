@@ -1,5 +1,4 @@
-#!/bin/sh
-#set -e
+#!/bin/bash
 #This command is used to baiduwangpan
 apt-get install python-pip
 pip install requests
