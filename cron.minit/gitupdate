@@ -1,3 +1,4 @@
 #!/bin/bash
-cd /home/andy/tool-sh
-git push origin master
+cd $PWD/tool-sh
+git pull origin master >> $PWD/cron.minit/git-pull.log
+#git push origin master
