@@ -1,0 +1,7 @@
+#!/bin/bash
+sudo apt-get install scrot
+scrot ~/bbb.png
+eog ~/bbb.png
+#scrot -s
+#sudo apt-get remove scrot
+

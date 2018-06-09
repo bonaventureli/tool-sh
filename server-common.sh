@@ -9,6 +9,7 @@ then
 	    cp name ../tmp-server
 	    cp pass-a ../tmp-server
 	    cd ../tmp-server
+	    export PATH=$PWD:$PATH
 	    i=0;
 	    while [ $i -lt 10 ]
 	    do
@@ -19,7 +20,8 @@ then
 	        (time /bin/bash -e $PWD/$SHELLFILE) 2>&1 | tee $LOGFILE
 	        endtime=`date +%Y-%m-%d-%H:%M:%S`
 		#echo $endtime 2>&1 | tee $LOGFILE
-	        /bin/bash $PWD/email1.1.sh $LOGFILE 
+	        email1.1.sh $LOGFILE 
+	        #/bin/bash $PWD/email1.1.sh $LOGFILE 
 	        rm *.log
 	        rm -rf tmp-server
 	    done
