@@ -1,4 +1,8 @@
 #!/bin/bash
+sudo apt-get install autoconf
+sudo apt-get install automake
+sudo apt-get install libtool
+sudo apt-get install g++
 DIR=$PWD
 wget -c https://releases.linaro.org/components/toolchain/binaries/4.9-2017.01/arm-linux-gnueabihf/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf.tar.xz
 #wget -c http://publishing-ap-linaro-org.s3.amazonaws.com/releases/archive/14.05/components/toolchain/binaries/gcc-linaro-arm-linux-gnueabihf-4.9-2014.05_linux.tar.xz
@@ -12,17 +16,17 @@ fi
 export PATH=$PWD/$ARM_LINUX_GNU/bin:$PATH
 export TOOLCHAIN=$PWD/$ARM_LINUX_GNU
 export PKG_CONFIG_PREFIX=$TOOLCHAIN/arm-linux-gnueabihf
-
-rm -rf /usr/local/tslib
-rm -rf $PWD/tslib
+sudo rm -rf /usr/local/tslib
+sudo rm -rf $PWD/tslib
 if [ ! -d $PWD/tslib ]; then
 git clone https://github.com/kergoth/tslib.git 
 fi
 cd tslib
 ./autogen.sh echo "ac_cv_func_malloc_0 _nonnull=yes">arm-linux-gnueabihf.cache
-./configure --host=arm-linux-gnueabihf --cache-file=arm-linux-gnueabihf.cache --prefix=/usr/local/tslib ac_cv_func_malloc_0_nonnull=yes --enable-input api=no
-make
+./configure --host=arm-linux-gnueabihf --cache-file=arm-linux-gnueabihf.cache --prefix=$PWD/tslib-install ac_cv_func_malloc_0_nonnull=yes --enable-input api=no
+make -j4
 make install
+sudo mv tslib-install /usr/local/tslib
 cd ..
 
 rm -rf qt-everywhere-opensource-src-4.8.6
@@ -31,12 +35,13 @@ if [ ! -d $PWD/qt-everywhere-opensource-src-4.8.6 ]; then
 tar zxvf qt-everywhere-opensource-src-4.8.6.tar.gz
 fi
 
-git clone https://github.com/bonaventureli/linux-am335x-g-
+git clone https://github.com/bonaventureli/linux-am335x-g-.git
 mv linux-am335x-g- linux-am335x-g++
 mv linux-am335x-g++ qt-everywhere-opensource-src-4.8.6/mkspecs/qws
 
 cd qt-everywhere-opensource-src-4.8.6
-INSTALL_PATH=/usr/local/Trolltech/QtEmbedded-4.8.6-tslib-gfx
+INSTALL_PATH=$PWD/Trolltech/QtEmbedded-4.8.6-tslib-gfx
+#INSTALL_PATH=/usr/local/Trolltech/QtEmbedded-4.8.6-tslib-gfx
 ./configure -prefix  $INSTALL_PATH \
         -opensource \
         -confirm-license \
@@ -84,7 +89,7 @@ INSTALL_PATH=/usr/local/Trolltech/QtEmbedded-4.8.6-tslib-gfx
         -D QT_QWS_CLIENTBLIT\
         -L /usr/local/tslib/lib\
         -I /usr/local/tslib/include
-make 2>&1 | tee ../qt-everywhere-opensource-src-4.8.6.log && make install
+make -j4 2>&1 | tee ../qt-everywhere-opensource-src-4.8.6.log && make install
 cd ..
 
 git clone https://github.com/bonaventureli/udev-usb-lib.git
@@ -100,3 +105,8 @@ mv qmake qmake-gfx
 export PATH=$INSTALL_PATH/bin:$PATH
 
 cd $DIR
+
+#sudo apt-get remove autoconf
+#sudo apt-get remove automake
+#sudo apt-get remove libtool
+#sudo apt-get remove g++

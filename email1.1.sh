@@ -1,6 +1,5 @@
 #!/bin/bash
-#sudo apt install sendemail
-#sudo apt remove sendemail
+sudo apt install sendemail
 echo "you need two file (name and pass-a)"
 for qqname in $(cat name)
 do
@@ -19,3 +18,4 @@ emailpassword=$pass
 
 sudo sendemail -s smtp.qq.com -f ${HOSTEMAIL} -t ${TARGET} -u ${1} -o message-file=${1} -xu ${HOSTNAME} -xp ${emailpassword} -o tls=auto 
 
+#sudo apt remove sendemail
