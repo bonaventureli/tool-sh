@@ -1,7 +1,8 @@
 #!/bin/bash
 sudo apt-get install scrot
 scrot ~/bbb.png
-eog ~/bbb.png
+#eog ~/bbb.png
+/bin/bash email1.1.sh ~/bbb.png
 #scrot -s
 #sudo apt-get remove scrot
 

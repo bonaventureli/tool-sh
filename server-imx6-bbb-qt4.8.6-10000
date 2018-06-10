@@ -40,8 +40,8 @@ git clone https://github.com/bonaventureli/linux-am335x-g-.git
 mv linux-am335x-g- linux-am335x-g++
 mv linux-am335x-g++ qt-everywhere-opensource-src-4.8.6/mkspecs/qws
 
-cd qt-everywhere-opensource-src-4.8.6
 INSTALL_PATH=$PWD/Trolltech/QtEmbedded-4.8.6-tslib-gfx
+cd qt-everywhere-opensource-src-4.8.6
 #INSTALL_PATH=/usr/local/Trolltech/QtEmbedded-4.8.6-tslib-gfx
 ./configure -prefix  $INSTALL_PATH \
         -opensource \
@@ -93,10 +93,14 @@ INSTALL_PATH=$PWD/Trolltech/QtEmbedded-4.8.6-tslib-gfx
 make -j4 2>&1 | tee ../qt-everywhere-opensource-src-4.8.6.log && make install
 cd ..
 
+if [ ! -d $PWD/udev-usb-lib ]; then
 git clone https://github.com/bonaventureli/udev-usb-lib.git
+fi
 cd udev-usb-lib
 cp libudev.so.0.13.1 $INSTALL_PATH/lib
 cp libusb-1.0.so.0.1.0 $INSTALL_PATH/lib
+cd ..
+rm -rf udev-usb-lib
 cd $INSTALL_PATH/lib
 ln -s libudev.so.0.13.1 libudev.so.0
 ln -s libudev.so.0.13.1 libudev.so
@@ -155,6 +159,8 @@ ADDFILE2="b9slice\/b9slice.cpp"
    #     echo -e "\033[31m you must input ./${0} make/clean \033[0m"
    # ;;
 #esac
+
+cd $DIR
 
 #sudo apt-get remove autoconf
 #sudo apt-get remove automake
