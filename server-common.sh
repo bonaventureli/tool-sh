@@ -21,7 +21,7 @@ then
 	        endtime=`date +%Y-%m-%d-%H:%M:%S`
 		echo $endtime 2>&1 | tee $LOGFILE
 	       # email1.1.sh $LOGFILE 
-	        #/bin/bash $PWD/email1.1.sh $LOGFILE 
+	        /bin/bash $PWD/email1.1.sh $LOGFILE 
 	        rm *.log
 	        rm -rf tmp-server
 	    done
