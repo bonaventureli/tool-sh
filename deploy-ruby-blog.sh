@@ -17,8 +17,9 @@ rm -rf blog
 rails new blog --skip-spring --skip-listen
 #rails new -h blog
 cd blog
-bin/rails server
 firefox localhost:3000
+bin/rails server
+#firefox localhost:3000
 
 #sudo apt-get remove ruby
 #sudo apt-get remove sqlite3
