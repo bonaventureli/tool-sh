@@ -1,12 +1,13 @@
 #!/bin/bash
 sudo apt-get install ruby
 sudo apt-get install sqlite3
-sudo apt-get install ruby-railties
+#sudo apt-get install ruby-railties
 sudo gem install rails
-sudo gem instsll redis
-#sudo gem instsll bundler && bundler install
+#sudo gem instsll redis
+sudo gem instsll bundler
 #sudo gem install json –v 1.8.3 -- --use-system-libraries
-sudo apt install ruby-bundler
+#sudo apt install ruby-bundler
+sudo bundle install
 bundle install
 gem env
 ruby -v
