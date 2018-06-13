@@ -17,6 +17,8 @@ then
 	        LOGFILE=${1}-$starttime.log
 	        SHELLFILE=${1}
 	        LOGFILE=$SHELLFILE-$starttime.log
+	        #(time /bin/bash -e $PWD/$SHELLFILE ${2}) 2>&1 | tee $LOGFILE
+	        #(time /bin/bash -e $PWD/$SHELLFILE install) 2>&1 | tee $LOGFILE
 	        (time /bin/bash -e $PWD/$SHELLFILE) 2>&1 | tee $LOGFILE
 	        #endtime=`date +%Y-%m-%d-%H:%M:%S`
 		#echo $endtime 2>&1 | tee $LOGFILE
@@ -28,7 +30,7 @@ then
 else
 
 	    cd ..
-	    rm ../*.log
-            rm -rf ../tmp-server
+	    #rm ../*.log
+            #rm -rf ../tmp-server
 	    echo -e "\033[31m you must input ${0} [xxx.sh] \033[0m"
 fi

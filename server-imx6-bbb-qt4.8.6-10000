@@ -1,11 +1,18 @@
 #!/bin/bash
 export PATH=$PWD:$PATH
+if [ "${1}" == "install" ]; then
 sudo apt-get install autoconf
 sudo apt-get install automake
 sudo apt-get install libtool
 sudo apt-get install g++
+elif [ "${1}" == "remove" ]; then
+sudo apt-get remove autoconf
+sudo apt-get remove automake
+sudo apt-get remove libtool
+sudo apt-get remove g++
+else
 DIR=$PWD
-wget -c https://releases.linaro.org/components/toolchain/binaries/4.9-2017.01/arm-linux-gnueabihf/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf.tar.xz
+wget --tries=0 -c https://releases.linaro.org/components/toolchain/binaries/4.9-2017.01/arm-linux-gnueabihf/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf.tar.xz
 #wget -c http://publishing-ap-linaro-org.s3.amazonaws.com/releases/archive/14.05/components/toolchain/binaries/gcc-linaro-arm-linux-gnueabihf-4.9-2014.05_linux.tar.xz
 #wget -c https://releases.linaro.org/14.04/components/toolchain/binaries/gcc-linaro-arm-linux-gnueabihf-4.8-2014.04_linux.tar.xz
 ARM_LINUX_GNU=gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf
@@ -18,7 +25,7 @@ export PATH=$PWD/$ARM_LINUX_GNU/bin:$PATH
 export TOOLCHAIN=$PWD/$ARM_LINUX_GNU
 export PKG_CONFIG_PREFIX=$TOOLCHAIN/arm-linux-gnueabihf
 sudo rm -rf /usr/local/tslib
-sudo rm -rf $PWD/tslib
+#sudo rm -rf $PWD/tslib
 if [ ! -d $PWD/tslib ]; then
 git clone https://github.com/kergoth/tslib.git 
 fi
@@ -27,18 +34,21 @@ cd tslib
 ./configure --host=arm-linux-gnueabihf --cache-file=arm-linux-gnueabihf.cache --prefix=$PWD/tslib-install ac_cv_func_malloc_0_nonnull=yes --enable-input api=no
 make -j4
 make install
+make distclean
 sudo mv tslib-install /usr/local/tslib
 cd ..
 
-wget -c http://mirrors.ustc.edu.cn/qtproject/official_releases/qt/4.8/4.8.6/qt-everywhere-opensource-src-4.8.6.tar.gz
+wget --tries=0 -c http://mirrors.ustc.edu.cn/qtproject/official_releases/qt/4.8/4.8.6/qt-everywhere-opensource-src-4.8.6.tar.gz
 rm -rf qt-everywhere-opensource-src-4.8.6
 if [ ! -d $PWD/qt-everywhere-opensource-src-4.8.6 ]; then
 tar zxvf qt-everywhere-opensource-src-4.8.6.tar.gz
 fi
-
+if [ ! -d $PWD/linux-am335x-g- ]; then
 git clone https://github.com/bonaventureli/linux-am335x-g-.git
-mv linux-am335x-g- linux-am335x-g++
-mv linux-am335x-g++ qt-everywhere-opensource-src-4.8.6/mkspecs/qws
+fi
+#mv linux-am335x-g- linux-am335x-g++
+cp -r  linux-am335x-g- qt-everywhere-opensource-src-4.8.6/mkspecs/qws/linux-am335x-g++
+#mv linux-am335x-g++ qt-everywhere-opensource-src-4.8.6/mkspecs/qws
 
 INSTALL_PATH=$PWD/Trolltech/QtEmbedded-4.8.6-tslib-gfx
 rm -rf $PWD/Trolltech/
@@ -112,8 +122,13 @@ export PATH=$INSTALL_PATH/bin:$PATH
 
 cd $DIR
 
+if [ ! -d $PWD/B9Creator ]; then
 git clone https://github.com/bonaventureli/B9Creator.git
+fi
+if [ ! -d $PWD/B9Creator-arm ]; then
 git clone https://github.com/bonaventureli/B9Creator-arm.git
+fi
+
 #APPNAME=appB9Creator
 #FROMNAME=B9Creator/Root/B9Creator
 #REMOVE1="b9layout\/projectdata.h"
@@ -171,8 +186,8 @@ ADDFILE1="b9edit\/SliceEditView.h"
 ADDFILE2="b9edit\/SliceEditView.cpp"
 #export export PATH=/usr/local/Trolltech/QtEmbedded-4.8.6-ubuntu2/bin:$PATH
 #export export PATH=/usr/local/Trolltech/QtEmbedded-4.8.6-ubuntu/bin:$PATH
-case ${1} in
-    "make")
+#case ${1} in
+#    "make")
         rm -rf $APPNAME
         mkdir $APPNAME
         cp -r $FROMNAME/* $APPNAME
@@ -207,8 +222,4 @@ case ${1} in
         sed -i "88i$ADDFILE2" $APPNAME.pro
         make
         ./$APPNAME
-
-#sudo apt-get remove autoconf
-#sudo apt-get remove automake
-#sudo apt-get remove libtool
-#sudo apt-get remove g++
+fi

@@ -1,14 +1,27 @@
 #!/bin/bash
+if [ "${1}" == "install" ]; then
 sudo apt-get install ruby
 sudo apt-get install sqlite3
 #sudo apt-get install ruby-railties
 sudo gem install rails
-#sudo gem instsll redis
-sudo gem instsll bundler
+#sudo gem install redis
+#sudo gem install bundler
 #sudo gem install json –v 1.8.3 -- --use-system-libraries
 #sudo apt install ruby-bundler
-sudo bundle install
-bundle install
+#sudo bundle install
+bundle install --local
+elif [ "${1}" == "remove" ]; then
+sudo apt-get remove ruby
+sudo apt-get remove sqlite3
+sudo apt-get remove ruby-railties
+sudo gem remove rails
+sudo gem remove redis
+sudo gem remove bundler
+sudo gem remove json –v 1.8.3 -- --use-system-libraries
+sudo apt remove ruby-bundler
+bundle remove --local
+sudo bundle remove --local
+else
 gem env
 ruby -v
 sqlite3 --version
@@ -22,7 +35,4 @@ firefox localhost:3000
 bin/rails server
 #firefox localhost:3000
 
-#sudo apt-get remove ruby
-#sudo apt-get remove sqlite3
-#sudo gem remove rails
-#sudo apt-get remove ruby-railties
+fi

@@ -1,12 +1,16 @@
 #!/bin/bash
+if [ "${1}" == "install" ];then
+sudo gem install rails
+elif [ "${1}" == "remove" ];then
+sodo gem remove rails
+else
 ruby -v
 sqlite3 --version
-gem install rails
 rails --version
 
 RUBYNAME=hello
 rm -rf $RUBYNAME
-rails new $RUBYNAME
+#rails new $RUBYNAME
 rails new $RUBYNAME -h --skip-spring --skip-listen
 #rails new -h blog
 cd $RUBYNAME
@@ -17,4 +21,4 @@ vim config/routes.rb
 #root 'welcome#index'
 bin/rails server
 firefox localhost:3000
-
+fi
