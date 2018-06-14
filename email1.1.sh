@@ -5,14 +5,10 @@ sudo apt install sendemail
 elif [ "${1}" == "remove" ]; then
 sudo apt remove sendemail
 else
-for qqname in $(cat name)
-do
-    echo ""
-done
 openssl enc -des-ede3-cbc -in name-a -out .name-a -d -k 123456
-for qqname in $(cat .name)
+for qqname in $(cat .name-a)
 do
-    echo ""
+    echo "******************************"
 done
 rm -rf .name-a
 HOSTNAME=$qqname
@@ -21,7 +17,7 @@ TARGET=1364036694@qq.com
 openssl enc -des-ede3-cbc -in pass-a -out .pass-a -d -k 123456
 for pass in $(cat .pass-a)
 do
-    echo ""
+    echo "********************************"
 done
 rm -rf .pass-a
 emailpassword=$pass
