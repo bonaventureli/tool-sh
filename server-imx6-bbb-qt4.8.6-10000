@@ -12,7 +12,15 @@ sudo apt-get remove libtool
 sudo apt-get remove g++
 else
 DIR=$PWD
+if [ -f $PWD/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf.tar.xz ]; then
+md5sum gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf.tar.xz > gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf.tar.xz.md5sum
+echo "545af35e13c439cc156dc0881d976463  gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf.tar.xz" > gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf.tar.xz.md5sum.ok
+if [ "awk 'NR==FNR{a[$0]++} NR>FNR&&a[$0]' gcc-linaro.md5sum-ok gcc-linaro.md5sum" ]; then
+echo "need not download gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf.tar.xz"
+else
 wget --tries=0 -c https://releases.linaro.org/components/toolchain/binaries/4.9-2017.01/arm-linux-gnueabihf/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf.tar.xz
+fi
+fi
 #wget -c http://publishing-ap-linaro-org.s3.amazonaws.com/releases/archive/14.05/components/toolchain/binaries/gcc-linaro-arm-linux-gnueabihf-4.9-2014.05_linux.tar.xz
 #wget -c https://releases.linaro.org/14.04/components/toolchain/binaries/gcc-linaro-arm-linux-gnueabihf-4.8-2014.04_linux.tar.xz
 ARM_LINUX_GNU=gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf
@@ -37,8 +45,15 @@ make install
 make distclean
 sudo mv tslib-install /usr/local/tslib
 cd ..
-
+if [ -f $PWD/qt-everywhere-opensource-src-4.8.6.tar.gz ]; then
+md5sum qt-everywhere-opensource-src-4.8.6.tar.gz > qt-everywhere-opensource-src-4.8.6.tar.gz.md5sum
+echo "2edbe4d6c2eff33ef91732602f3518eb  qt-everywhere-opensource-src-4.8.6.tar.gz" > qt-everywhere-opensource-src-4.8.6.tar.gz.md5sum.ok
+if [ "awk 'NR==FNR{a[$0]++} NR>FNR&&a[$0]' qt-everywhere-opensource-src-4.8.6.tar.gz.md5sum qt-everywhere-opensource-src-4.8.6.tar.gz.md5sum.ok" ]; then
+echo "need not download qt-everywhere-opensource-src-4.8.6.tar.gz"
+else
 wget --tries=0 -c http://mirrors.ustc.edu.cn/qtproject/official_releases/qt/4.8/4.8.6/qt-everywhere-opensource-src-4.8.6.tar.gz
+fi
+fi
 rm -rf qt-everywhere-opensource-src-4.8.6
 if [ ! -d $PWD/qt-everywhere-opensource-src-4.8.6 ]; then
 tar zxvf qt-everywhere-opensource-src-4.8.6.tar.gz
@@ -225,6 +240,8 @@ ADDFILE2="b9edit\/SliceEditView.cpp"
 #fi
 (
 cat << EOF
+export PATH=$PWD/$ARM_LINUX_GNU/bin:$PATH
+export PATH=$INSTALL_PATH/bin:$PATH
 APPNAME=appB9Creator
 FROMNAME=B9Creator/Root/B9Creator
 REMOVE1="b9layout\/projectdata.h"
