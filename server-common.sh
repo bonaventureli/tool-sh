@@ -4,6 +4,7 @@ if  [ "${1}" != "" ]
 then
 
 	    mkdir -p ../tmp-server
+	    rm -rf ../tmp-server/${1}
 	    cp ${1} ../tmp-server
 	    cp email1.1.sh ../tmp-server
 	    cp name ../tmp-server
