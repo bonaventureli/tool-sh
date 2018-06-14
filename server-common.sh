@@ -7,7 +7,7 @@ then
 	    rm -rf ../tmp-server/${1}
 	    cp ${1} ../tmp-server
 	    cp email1.1.sh ../tmp-server
-	    cp name ../tmp-server
+	    cp name-a ../tmp-server
 	    cp pass-a ../tmp-server
 	    cd ../tmp-server
 	    export PATH=$PWD:$PATH

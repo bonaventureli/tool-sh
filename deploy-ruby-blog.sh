@@ -2,6 +2,7 @@
 if [ "${1}" == "install" ]; then
 sudo apt-get install ruby
 sudo apt-get install sqlite3
+#sudo gem update
 #sudo apt-get install ruby-railties
 sudo gem install rails
 #sudo gem install redis
@@ -9,7 +10,7 @@ sudo gem install rails
 #sudo gem install json –v 1.8.3 -- --use-system-libraries
 #sudo apt install ruby-bundler
 #sudo bundle install
-bundle install --local
+#bundle install --local
 elif [ "${1}" == "remove" ]; then
 sudo apt-get remove ruby
 sudo apt-get remove sqlite3
@@ -19,7 +20,6 @@ sudo gem remove redis
 sudo gem remove bundler
 sudo gem remove json –v 1.8.3 -- --use-system-libraries
 sudo apt remove ruby-bundler
-bundle remove --local
 sudo bundle remove --local
 else
 gem env

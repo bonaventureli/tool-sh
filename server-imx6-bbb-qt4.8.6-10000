@@ -42,7 +42,7 @@ cd tslib
 ./configure --host=arm-linux-gnueabihf --cache-file=arm-linux-gnueabihf.cache --prefix=$PWD/tslib-install ac_cv_func_malloc_0_nonnull=yes --enable-input api=no
 make -j4
 make install
-make distclean
+#make distclean
 sudo mv tslib-install /usr/local/tslib
 cd ..
 if [ -f $PWD/qt-everywhere-opensource-src-4.8.6.tar.gz ]; then
@@ -144,53 +144,6 @@ if [ ! -d $PWD/B9Creator-arm ]; then
 git clone https://github.com/bonaventureli/B9Creator-arm.git
 fi
 
-#APPNAME=appB9Creator
-#FROMNAME=B9Creator/Root/B9Creator
-#REMOVE1="b9layout\/projectdata.h"
-#REMOVE2="b9layout\/projectdata.cpp"
-#REMOVE3="qextserialport-1.2beta2\/src"
-#ADDFILE1="b9slice\/b9slice.h"
-#ADDFILE2="b9slice\/b9slice.cpp"
-##export export PATH=/usr/local/Trolltech/QtEmbedded-4.8.6-ubuntu2/bin:$PATH
-##export export PATH=/usr/local/Trolltech/QtEmbedded-4.8.6-ubuntu/bin:$PATH
-##case ${1} in
-##    "make")
-#	rm -rf $APPNAME
-#	mkdir $APPNAME
-#	cp -r $FROMNAME/* $APPNAME
-#	cd $APPNAME 	
-#	qmake-gfx -project
-#	qmake-gfx 
-#	sed -i "9iQT += core gui" $APPNAME.pro
-#	sed -i "10iQT += svg" $APPNAME.pro
-#	sed -i "11iQT += opengl" $APPNAME.pro
-#	sed -i "12iQT += network" $APPNAME.pro
-#	sed -i "13iunix:!macx: LIBS += -lGLU" $APPNAME.pro
-#	sed -i "14iunix:!macx: LIBS += -lz" $APPNAME.pro
-#	sed -i "15iINCLUDEPATH += b9slice" $APPNAME.pro
-#	sed -i "16iINCLUDEPATH += b9edit" $APPNAME.pro
-#	sed -i "17iINCLUDEPATH += b9create" $APPNAME.pro
-#	sed -i "/$REMOVE1/d" $APPNAME.pro
-#	sed -i "/$REMOVE2/d" $APPNAME.pro
-#	sed -i "/$REMOVE3/d" $APPNAME.pro
-#	sed -i "/$ADDFILE1/d" $APPNAME.pro
-#	sed -i "/$ADDFILE2/d" $APPNAME.pro
-#	#sed -i "s/$/lifei/g" $APPNAME.pro
-#	#sed -i "s/^/lifei/g" $APPNAME.pro
-#	sed -i "15iinclude(qextserialport-1.2beta2/src/qextserialport.pri)" $APPNAME.pro
-#	sed -i "66i$ADDFILE1" $APPNAME.pro
-#	sed -i "128i$ADDFILE2" $APPNAME.pro
-#	make
-#	./$APPNAME
-#	cd ..
-#   # ;;
-#   # "clean")
-#   #     rm -rf $APPNAME
-#   # ;;
-#   # *)
-#   #     echo -e "\033[31m you must input ./${0} make/clean \033[0m"
-#   # ;;
-##esac
 
 APPNAME=appB9Creator
 FROMNAME=B9Creator/Root/B9Creator
@@ -199,10 +152,6 @@ REMOVE2="b9layout\/projectdata.cpp"
 REMOVE3="qextserialport-1.2beta2\/src"
 ADDFILE1="b9edit\/SliceEditView.h"
 ADDFILE2="b9edit\/SliceEditView.cpp"
-#export export PATH=/usr/local/Trolltech/QtEmbedded-4.8.6-ubuntu2/bin:$PATH
-#export export PATH=/usr/local/Trolltech/QtEmbedded-4.8.6-ubuntu/bin:$PATH
-#case ${1} in
-#    "make")
         rm -rf $APPNAME
         mkdir $APPNAME
         cp -r $FROMNAME/* $APPNAME
@@ -218,26 +167,20 @@ ADDFILE2="b9edit\/SliceEditView.cpp"
         qmake-gfx
         sed -i "9iQT += core gui" $APPNAME.pro
         sed -i "10iQT += svg" $APPNAME.pro
-#        sed -i "11iQT += opengl" $APPNAME.pro
-        sed -i "12iQT += network" $APPNAME.pro
-#        sed -i "13iunix:!macx: LIBS += -lGLU" $APPNAME.pro
-#        sed -i "14iunix:!macx: LIBS += -lz" $APPNAME.pro
-        sed -i "15i#INCLUDEPATH += b9slice" $APPNAME.pro
-        sed -i "16iINCLUDEPATH += b9edit" $APPNAME.pro
-        sed -i "17iINCLUDEPATH += b9create" $APPNAME.pro
+        sed -i "11iQT += network" $APPNAME.pro
+        sed -i "12i#INCLUDEPATH += b9slice" $APPNAME.pro
+        sed -i "13iINCLUDEPATH += b9edit" $APPNAME.pro
+        sed -i "14iINCLUDEPATH += b9create" $APPNAME.pro
         sed -i "/$REMOVE1/d" $APPNAME.pro
         sed -i "/$REMOVE2/d" $APPNAME.pro
         sed -i "/$REMOVE3/d" $APPNAME.pro
         sed -i "/$ADDFILE1/d" $APPNAME.pro
         sed -i "/$ADDFILE2/d" $APPNAME.pro
-        #sed -i "s/$/lifei/g" $APPNAME.pro
-        #sed -i "s/^/lifei/g" $APPNAME.pro
         sed -i "15iinclude(qextserialport-1.2beta2/src/qextserialport.pri)" $APPNAME.pro
-        sed -i "48i$ADDFILE1" $APPNAME.pro
-        sed -i "88i$ADDFILE2" $APPNAME.pro
+        sed -i "45i$ADDFILE1" $APPNAME.pro
+        sed -i "85i$ADDFILE2" $APPNAME.pro
         make
-        ./$APPNAME
-#fi
+        ./$APPNAME || echo "can not execute appB9Creator 32 bit!"
 (
 cat << EOF
 export PATH=$PWD/$ARM_LINUX_GNU/bin:$PATH
@@ -268,13 +211,10 @@ ADDFILE2="b9edit\/SliceEditView.cpp"
         qmake-gfx
         sed -i "9iQT += core gui" $APPNAME.pro
         sed -i "10iQT += svg" $APPNAME.pro
-#        sed -i "11iQT += opengl" $APPNAME.pro
-        sed -i "12iQT += network" $APPNAME.pro
-#        sed -i "13iunix:!macx: LIBS += -lGLU" $APPNAME.pro
-#        sed -i "14iunix:!macx: LIBS += -lz" $APPNAME.pro
-        sed -i "15i#INCLUDEPATH += b9slice" $APPNAME.pro
-        sed -i "16iINCLUDEPATH += b9edit" $APPNAME.pro
-        sed -i "17iINCLUDEPATH += b9create" $APPNAME.pro
+        sed -i "11iQT += network" $APPNAME.pro
+        sed -i "12i#INCLUDEPATH += b9slice" $APPNAME.pro
+        sed -i "13iINCLUDEPATH += b9edit" $APPNAME.pro
+        sed -i "14iINCLUDEPATH += b9create" $APPNAME.pro
         sed -i "/$REMOVE1/d" $APPNAME.pro
         sed -i "/$REMOVE2/d" $APPNAME.pro
         sed -i "/$REMOVE3/d" $APPNAME.pro
@@ -283,8 +223,8 @@ ADDFILE2="b9edit\/SliceEditView.cpp"
         #sed -i "s/$/lifei/g" $APPNAME.pro
         #sed -i "s/^/lifei/g" $APPNAME.pro
         sed -i "15iinclude(qextserialport-1.2beta2/src/qextserialport.pri)" $APPNAME.pro
-        sed -i "48i$ADDFILE1" $APPNAME.pro
-        sed -i "88i$ADDFILE2" $APPNAME.pro
+        sed -i "45i$ADDFILE1" $APPNAME.pro
+        sed -i "85i$ADDFILE2" $APPNAME.pro
         make
         ./$APPNAME
 EOF
