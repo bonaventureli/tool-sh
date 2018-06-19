@@ -7,7 +7,7 @@
 #echo "# tool-sh" >> README.md
 #git config --global user.email "xxx@xxx.cn"
 #git config --global user.name "bonaventureli"
-
+#git config --global http.postBuffer  524288000
 git init
 git add -A
 #git commit -m "vbird"
