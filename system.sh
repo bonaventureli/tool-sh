@@ -6,16 +6,11 @@ ARCH=$(uname -m)
 #ARM Native gcc compiler (running gcc on arm target)
 if [ "x${ARCH}" = "xarmv7l" ] ; then
 	#Native arm gcc compiler
-	echo "Using: Native armv71 gccCompiler"
 	CC=
-else
-        echo "Using: Cross Compiler"
-        CC=/home/andy/beaglebone/linux-dev/dl/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-
-
 fi
 
 ###REQUIRED:
-ZRELADDR=0x80008000
+
 #ARM GCC CROSS Compiler:
 #if CC is not set, a known working linaro based gcc compiler will be downloaded and utilized.
 #CC=<enter full path>/bin/arm-none-eabi-
@@ -29,8 +24,7 @@ ZRELADDR=0x80008000
 
 ###OPTIONAL: LINUX_GIT: specify location of locally cloned git tree.
 #
-#LINUX_GIT=/home/user/linux-stable/
-#LINUX_GIT=/home/andy/beaglebone/linux-stable/
+#LINUX_GIT=/home/andy/linux-stable/
 
 ###OPTIONAL: MMC: (REQUIRED FOR RUNNING: tools/install_kernel.sh)
 #Note: This operates on raw disks, NOT PARTITIONS..
@@ -42,9 +36,6 @@ ZRELADDR=0x80008000
 #CORRECT: MMC=/dev/sde
 #
 #MMC=/dev/sde
-#MMC=/dev/sdd
-MMC=/dev/sdb
-#MMC=/dev/sdc
 
 ###ADVANCED: RUN_BISECT: used with ./scripts/bisect.sh
 #

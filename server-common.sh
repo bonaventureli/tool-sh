@@ -9,6 +9,8 @@ then
 	    cp email1.1.sh ../tmp-server
 	    cp name-a ../tmp-server
 	    cp pass-a ../tmp-server
+	    cp version.sh ../tmp-server
+	    cp system.sh ../tmp-server
 	    cd ../tmp-server
 	    export PATH=$PWD:$PATH
 	    i=0;
