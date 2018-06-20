@@ -1,4 +1,5 @@
 #!/bin/bash -e
+DIR=$PWD
 if [ -f $PWD/qt-everywhere-opensource-src-4.8.6.tar.gz ]; then
 md5sum qt-everywhere-opensource-src-4.8.6.tar.gz > qt-everywhere-opensource-src-4.8.6.tar.gz.md5sum
 echo "2edbe4d6c2eff33ef91732602f3518eb  qt-everywhere-opensource-src-4.8.6.tar.gz" > qt-everywhere-opensource-src-4.8.6.tar.gz.md5sum.ok
@@ -13,8 +14,8 @@ if [ ! -d $PWD/qt-everywhere-opensource-src-4.8.6 ]; then
 tar zxvf qt-everywhere-opensource-src-4.8.6.tar.gz
 fi
 
-FIEL=$PWD/qt-everywhere-opensource-src-4.8.6/mkspecs/common/gcc-base.conf
-INSTALL=/usr/local/Trolltech/Qt-4.8.6-ubuntu
+FILE=$PWD/qt-everywhere-opensource-src-4.8.6/mkspecs/common/gcc-base.conf
+INSTALL=$PWD/Trolltech/Qt-4.8.6-ubuntu
 sed -i "46iQMAKE_CXXFLAGS            += \$\$QMAKE_CFLAGS -std=gnu++98" $FILE
   cd qt-everywhere-opensource-src-4.8.6
                 ./configure -v -prefix $INSTALL \
@@ -33,3 +34,8 @@ sed -i "46iQMAKE_CXXFLAGS            += \$\$QMAKE_CFLAGS -std=gnu++98" $FILE
 make
 make install
 
+cd $INSTALL/bin
+cp qmake qmake-ubuntu4.8.6
+cd $DIR
+echo "$INSTALL/bin">.qmake-ubuntu4.8.6
+echo "compiled! Thanks!"
