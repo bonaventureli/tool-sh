@@ -11,7 +11,7 @@
 #
 #wget http://releases.ubuntu.com/16.04/ubuntu-16.04.4-desktop-amd64.iso
 #wget http://releases.ubuntu.com/16.04/ubuntu-16.04.4-desktop-i386.iso
-#wget http://releases.ubuntu.com/16.04/ubuntu-16.04.4-server-amd64.iso
+wget http://releases.ubuntu.com/16.04/ubuntu-16.04.4-server-amd64.iso
 #wget http://releases.ubuntu.com/16.04/ubuntu-16.04.4-server-i386.iso
 #
 #wget http://releases.ubuntu.com/17.10/ubuntu-17.10.1-desktop-amd64.iso
