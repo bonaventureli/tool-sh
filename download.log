@@ -1,6 +1,6 @@
---2018-10-30 21:43:21--  https://releases.linaro.org/14.04/components/toolchain/binaries/gcc-linaro-arm-none-eabi-4.8-2014.04_linux.tar.xz
+--2019-02-13 18:57:18--  https://releases.linaro.org/14.04/components/toolchain/binaries/gcc-linaro-arm-none-eabi-4.8-2014.04_linux.tar.xz
 Resolving releases.linaro.org (releases.linaro.org)... 13.228.101.204
 Connecting to releases.linaro.org (releases.linaro.org)|13.228.101.204|:443... connected.
 HTTP request sent, awaiting response... 404 Not Found
-2018-10-30 21:43:21 ERROR 404: Not Found.
+2019-02-13 18:57:26 ERROR 404: Not Found.
 
