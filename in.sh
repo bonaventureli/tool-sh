@@ -4,6 +4,7 @@ nordic="$PWD/nordicB"
 linuxkernel="$PWD/linuxkernelB" 
 itchat="$PWD/itchatB" 
 cp ../nordicB/*.sh nordicB 
+cp ../javaB/*.sh javaB 
 if [ ! -d "$PWD/itchatB" ];then 
     mkdir -p itchatB
 else 
