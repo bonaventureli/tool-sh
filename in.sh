@@ -1,27 +1,14 @@
 #!/bin/bash 
-
-nordic="$PWD/nordicB" 
-linuxkernel="$PWD/linuxkernelB" 
-itchat="$PWD/itchatB" 
-cp ../nordicB/*.sh nordicB 
-cp ../javaB/*.sh javaB 
-if [ ! -d "$PWD/itchatB" ];then 
-    mkdir -p itchatB
-else 
-    echo "itchatB ok"
-fi 
-
-if [ -f "$PWD/itchatB/*.sh" ];then 
-cp ../itchatB/*.sh itchatB 
-else 
-    echo "no *.sh file!"
-fi 
+cp ../cc2640B/*.sh cc2640B 
 cp ../itchatB/*.py itchatB 
-
-for i in {$nordic .. $itchat}
-do 
-    echo $i
-    if [ ! -d "$i" ];then 
-    mkdir -p $i
-    fi 
-done
+cp ../linuxkernelB/*.sh linuxkernelB 
+cp ../protobufB/*.sh protobufB 
+cp ../rubyB/*.sh rubyB 
+cp ../ubootB/*.sh ubootB 
+cp ../androidB/*.sh androidB 
+cp ../gnueabihfB/*.sh gnueabihfB 
+cp ../javaB/*.sh javaB 
+cp ../nanopbB/*.sh nanopbB 
+cp ../nordicB/*.sh nordicB 
+cp ../qtB/*.sh qtB 
+cp ../sshB/*.sh sshB 
