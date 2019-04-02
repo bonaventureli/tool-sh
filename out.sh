@@ -12,3 +12,4 @@ cp -r nanopbB ..
 cp -r nordicB ..
 cp -r qtB ..
 cp -r sshB ..
+cp -r mysqlB ..
