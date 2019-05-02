@@ -14,5 +14,6 @@ cp ../qtB/*.sh qtB
 cp ../sshB/*.sh sshB 
 cp ../mysqlB/*.sh mysqlB 
 cp ../phpB/*.sh phpB 
+cp ../revealB/*.sh revealB 
 cp ../serverB/*.sh serverB 
 
