@@ -14,3 +14,4 @@ cp -r qtB ..
 cp -r sshB ..
 cp -r mysqlB ..
 cp -r phpB ..
+cp -r serverB ..
