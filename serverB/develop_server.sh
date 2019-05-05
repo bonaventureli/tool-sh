@@ -9,3 +9,4 @@ set root=(hd1,msdos1)
 set prefix=(hd1,msdos1)/boot/grub
 insmod normal
 normal
+vim /etc/apache2/apache2.conf
