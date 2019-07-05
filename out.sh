@@ -17,4 +17,5 @@ cp -r phpB ..
 cp -r revealB ..
 cp -r serverB ..
 cp -r beagleboneB ..
+cp -r archiveBoxB ..
 
