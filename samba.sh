@@ -2,6 +2,7 @@
 apt-get install samba
 apt-get -f install
 smbpasswd -a root
+mkdir -d /et/samba
 smbconf=/etc/samba/smb.conf
 mkdir /samba-ubuntu
 if [ ! -f "$smbconf" ]; then
