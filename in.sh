@@ -18,4 +18,5 @@ cp ../revealB/*.sh revealB
 cp ../serverB/*.sh serverB 
 cp ../beagleboneB/*.sh beagleboneB 
 cp ../archiveBoxB/*.sh archiveBoxB 
+cp ../confluenceB/*.sh confluenceB 
 
